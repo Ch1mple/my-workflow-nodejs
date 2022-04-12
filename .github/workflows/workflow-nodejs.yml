@@ -3,8 +3,7 @@ description: 'Greet someone and record the time'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
-    required: true
+    required: false
     default: 'World'
 runs:
   using: 'node12'
-  main: 'index.js'
