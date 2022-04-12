@@ -1,23 +1,10 @@
-name: Jane Hello World Action # [Required]
-author: jane-yc-chen
-description: print hello world for testing self-actions # [Required]
-branding:
-  icon: 'activity'  
-  color: 'purple'
-inputs: # [Optional]
-  strecho: # [Required] # in dockerfile using INPUT_STRECHO
-    description: 'print string' # [Required]
-    required: true # [Required]
-  numecho: # in dockerfile using INPUT_NUMECHO
-    description: 'print number'
-    required: false 
-    default: 'default number' # setting it if required: false
-# outputs:
-#   time: # id of output
-#     description: 'The time we greeted you'
-runs: # [Required]
-  using: 'docker' # [Required]
-  image: 'Dockerfile' # [Required] dockerfile or public Docker registry container
-  args:
-    - ${{ inputs.strecho }}
-    - ${{ inputs.numecho }}
+name: 'Hello World 2021 NodeJS'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+runs:
+  using: 'node12'
+  main: 'index.js'
